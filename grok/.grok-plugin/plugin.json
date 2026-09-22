@@ -1,0 +1,13 @@
+{
+  "name": "gander",
+  "version": "0.1.0",
+  "description": "Live review loop for agent-written markdown — skill + gander mcp for @agent comments on gander.md.",
+  "author": {
+    "name": "Gander",
+    "url": "https://gander.md"
+  },
+  "homepage": "https://gander.md",
+  "repository": "https://github.com/gandermd/gander-plugins",
+  "license": "MIT",
+  "keywords": ["gander", "markdown", "review", "mcp", "comments"]
+}
