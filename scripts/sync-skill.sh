@@ -26,7 +26,14 @@ for dest in claude/skills/gander cursor/skills/gander grok/skills/gander; do
     cp "$SRC/scripts/"*.sh "$ROOT/$dest/scripts/" 2>/dev/null || true
     chmod +x "$ROOT/$dest/scripts/"*.sh 2>/dev/null || true
   fi
-  echo "synced → $dest"
+  case "$dest" in
+    claude/*) install_source=plugin-claude ;;
+    cursor/*) install_source=plugin-cursor ;;
+    grok/*) install_source=plugin-grok ;;
+    *) echo "error: no install source for $dest" >&2; exit 1 ;;
+  esac
+  "$ROOT/scripts/rewrite-install-source.sh" "$ROOT/$dest" "$install_source"
+  echo "synced → $dest ($install_source)"
 done
 
 echo "Done. Source commit: $SHA"

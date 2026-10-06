@@ -29,6 +29,8 @@ curl -fsSL https://release.gander.md/install.sh | bash
 gander signup --email you@example.com
 ```
 
+Each vendored skill tags hosted signup, share, and watch with its install source (`plugin-claude`, `plugin-cursor`, or `plugin-grok`) when `GANDER_SOURCE` is unset. `scripts/sync-skill.sh` rewrites that default from the skill repo's `skill` value.
+
 See [gander.md docs](https://gander.md/docs) and [MCP](https://gander.md/docs/mcp).
 
 ## Install (local / from GitHub URL)
